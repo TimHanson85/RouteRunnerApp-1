@@ -1,0 +1,73 @@
+/*Stylesheet
+
+version:   1.0
+date:      07/01/15
+author:    Stephen John Ellis
+email:     stephenjohnellis@gmail.com
+website:   stephenjohnellis.org
+*/
+
+/*
+Colors:
+Yellow - #B08B0D
+Red - #97282C
+Blue - #428F89
+Green - #5F6024
+Purple - #805489
+background-color: #F2EDD7
+*/
+
+@font-face {
+  font-family: 'Slabo 13px', serif;
+  font-family: 'Stint Ultra Expanded', cursive;
+  font-family: 'Ultra', serif;
+}
+
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.clear {
+    clear:both;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+body {
+    font: 62.5%/1.5  "Slabo 13px", "Stint Ultra Expanded", "Ultra", serif, cursive;
+    background-color: #F2EDD7;
+    text-align:center;
+}
+
+h1
+    {
+    font-size: 2.2em;
+}
+
+h2
+    {
+    font-size: 2.0em;
+}
+
+h3
+    {
+    font-size: 1.8em;
+}
+
+h4
+    {
+    font-size: 1.6em;
+}
+
+h5
+    {
+    font-size: 1.4em;
+}
