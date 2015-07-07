@@ -5,9 +5,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: 'Slabo 13px', serif;
-  font-family: 'Stint Ultra Expanded', cursive;
-  font-family: 'Ultra', serif;
+  font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -263,9 +261,6 @@ th {
   }
 }
 @font-face {
-  font-family: 'Slabo 13px', serif;
-  font-family: 'Stint Ultra Expanded', cursive;
-  font-family: 'Ultra', serif;
   font-family: 'Glyphicons Halflings';
 
   src: url('../fonts/glyphicons-halflings-regular.eot');
@@ -1087,11 +1082,11 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: 'Slabo 13px', serif;
-  font-size: 18px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #F2EDD7;
+  background-color: #fff;
 }
 input,
 button,
@@ -4328,9 +4323,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: left;
   height: 50px;
   padding: 15px 15px;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 20px;
-  font: "Stint Ultra Expanded";
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -4547,23 +4541,22 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #000;
+  background-color: #f8f8f8;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
-  color: #FFF;
+  color: #777;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #6e6e6e;
+  color: #5e5e5e;
   background-color: transparent;
 }
 .navbar-default .navbar-text {
-  color: #FFF;
-  font-size: 12px;
+  color: #777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #FFF;
+  color: #777;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -4573,13 +4566,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #777;
+  color: #555;
   background-color: #e7e7e7;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
 .navbar-default .navbar-nav > .disabled > a:focus {
-  color: #777;
+  color: #ccc;
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
