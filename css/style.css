@@ -17,9 +17,8 @@ Orange - #E9862F
 */
 
 @font-face {
-  font-family: 'Slabo 13px', serif;
-  font-family: 'Stint Ultra Expanded', cursive;
-  font-family: 'Ultra', serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'PT Sans', sans-serif;
 }
 
 {
@@ -41,9 +40,11 @@ Orange - #E9862F
 }
 
 body {
-    font: 62.5%/1.5  "Slabo 13px", "Stint Ultra Expanded", "Ultra", serif, cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'PT Sans', sans-serif;
     background-color: #F2EDD7;
     text-align:center;
+    padding-top: 80px;
 }
 
 h1
@@ -69,4 +70,23 @@ h4
 h5
     {
     font-size: 1.4em;
+}
+
+#logo {
+  height: 35px;
+  margin-top: -0.4em;
+}
+
+#map-canvas {
+       width: 100%;
+       height: 400px;
+       background-color: #CCC;
+}
+
+.top-buffer {
+  margin-top: 40px;
+}
+
+.bot-buffer {
+  padding-bottom: 20px;
 }
