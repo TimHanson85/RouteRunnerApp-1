@@ -1,7 +1,7 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
-var knexConfig = require('./knexfile');
+var knexConfig = require('../js/knexfile');
 var knex = require('knex')(knexConfig);
 
 var app = express();
@@ -12,7 +12,7 @@ app.use(express.static(__dirname));
 
 app.set('database', knex);
 database = app.get('database');
-database('grocerylist');
+// database('grocerylist');
 
 //var groceryList = [];
 

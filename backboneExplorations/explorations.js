@@ -34,11 +34,11 @@ var WaypointView = Backbone.View.extend({
 	},
 	events : {
 		"click #delBtn"        : "delete" 
-		//"keypress #nameInput"  : "updateOnEnter",
 		// add other events for view
 	},
 	delete : function () {
     	this.model.del();
+    	this.remove();
     },
     updateOnEnter : function (e) {
 		if(e.keyCode == 13) {
@@ -65,30 +65,43 @@ var WaypointCollection = Backbone.Collection.extend({
 //create backbone view to display collection of waypoints/stops
 var WaypointCollectionView = Backbone.View.extend({
 	render : function () {
-		var locationNameInput = '<input id=locationNameInput type="text" value="" />';
+		var locationNameInput = '<input id=locationNameInput type="text" value="Enter New Waypoint Here..." />';
 		var addBtn = "<button id='addBtn'>Add Waypoint</button>";
 		var goBtn = "<button id='goBtn'>Find Best Route!</button>"; 
 		var div = '<div id="waypoint-list"></div>';
         this.$el.html(div + locationNameInput + goBtn);
 	},
 	initialize : function () {
-		this.listenTo(this.collection, 'add', this.addOne),
-		this.listenTo(this.collection, 'remove', this.removeOne)
+		this.listenTo(this.collection, 'add', this.addOne)
 	},
 	events : {
-		"click #addBtn" : "addToCollection",
+		"click #addBtn"                : "addToCollection",
+		"keypress #locationNameInput"  : "updateOnEnter",
 	},
-	addToCollection : function () {
+	updateOnEnter : function (e) {
+		if(e.keyCode == 13) {
+			var str = this.$el.find("#locationNameInput").val();
+			this.addToCollection(str);
+			//this.replacePlaceholderText();
+		}
+	},
+	replacePlaceholderText : function () {
+	//FUNCTION NOT WORKING AS DESIRED YET
+	// 	console.log("in replacePlaceholderText")
+	// 	var str = "Enter New Waypoint Here...";
+	// 	this.$el.value = str;
+	// 	console.log("this.$el :");
+	// 	console.log(this.$el);
+	},
+	addToCollection : function (str) {
 		// create new model, save to server and add to colleciton, triggers 'add' event in collection 
 		this.collection.create({
-			//model properties set and view created/appended in 'addOne' method, called in 'add' event listener
+			locationName : str
+			//view created/appended in 'addOne' method, called in 'add' event listener
 		});
 	},
 	addOne : function (model) {
-		//set new model porperties 
-        model.set({locationName : "Enter waypoint here..."});
-
-        // create view for new model
+		// create view for new model
         var view = new WaypointView({model : model});
         
         //render new view
@@ -97,10 +110,7 @@ var WaypointCollectionView = Backbone.View.extend({
         //append new view to list of waypoints (colleciton view's div)
         this.$("#waypoint-list").append(view.$el);
 	},
-	removeOne : function (input) {
-		//remove view from collection, triggers 'remove' event in collection
-		input.remove();
-	},
+
 	//add other methods
 });
 
